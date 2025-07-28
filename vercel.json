@@ -1,19 +1,12 @@
 {
-  "version": 2,
   "functions": {
     "api/index.js": {
       "maxDuration": 30
     }
   },
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/api/index.js"
-    }
-  ],
   "headers": [
     {
-      "source": "/(.*)",
+      "source": "/api/(.*)",
       "headers": [
         {
           "key": "Access-Control-Allow-Origin",
@@ -26,10 +19,6 @@
         {
           "key": "Access-Control-Allow-Headers",
           "value": "Content-Type, Authorization, X-Requested-With, Accept"
-        },
-        {
-          "key": "Access-Control-Max-Age",
-          "value": "86400"
         }
       ]
     }
